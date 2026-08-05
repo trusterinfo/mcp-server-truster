@@ -68,8 +68,17 @@ export function createServer(fetchImpl: typeof fetch = fetch): Server {
   return server;
 }
 
-const isMain =
-  process.argv[1] && import.meta.url.endsWith(process.argv[1].split("/").pop()!);
+import { realpathSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+
+// npx/bin runs go through a .bin symlink shim — compare real paths, not basenames.
+const isMain = (() => {
+  try {
+    return !!process.argv[1] && realpathSync(process.argv[1]) === fileURLToPath(import.meta.url);
+  } catch {
+    return false;
+  }
+})();
 if (isMain) {
   const server = createServer();
   const transport = new StdioServerTransport();

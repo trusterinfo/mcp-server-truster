@@ -1,6 +1,6 @@
 {
   "name": "mcp-server-truster",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "MCP server for truster.info — check whether a website can be trusted: trust score (0-100), community rating, reviews and Tranco rank for any domain.",
   "keywords": [
     "mcp",
