@@ -1,0 +1,27 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.trusterinfo/domain-trust",
+  "description": "Website trust checks: 0-100 safety score, verdict and community reviews (truster.info).",
+  "repository": {
+    "url": "https://github.com/trusterinfo/mcp-server-truster",
+    "source": "github"
+  },
+  "version": "1.0.2",
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "mcp-server-truster",
+      "version": "1.0.2",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://truster.info/mcp"
+    }
+  ]
+}
