@@ -1,0 +1,44 @@
+{
+  "name": "mcp-server-truster",
+  "version": "1.0.0",
+  "description": "MCP server for truster.info — check whether a website can be trusted: trust score (0-100), community rating, reviews and Tranco rank for any domain.",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "website-trust",
+    "domain-reputation",
+    "scam-check",
+    "reviews",
+    "truster"
+  ],
+  "license": "MIT",
+  "author": "truster.info",
+  "homepage": "https://truster.info",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trusterinfo/mcp-server-truster.git"
+  },
+  "type": "module",
+  "bin": {
+    "mcp-server-truster": "dist/index.js"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').chmodSync('dist/index.js', 0o755)\"",
+    "test": "node --test",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0",
+    "@types/node": "^22.0.0"
+  }
+}
